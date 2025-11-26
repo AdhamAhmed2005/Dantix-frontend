@@ -8,10 +8,34 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["500"] });
 
 export default function DashboardPage() {
   const metrics = [
-    { label: "Model Accuracy", value: "92", trend: "up", color: "text-orange-600", icon: "trend-up" },
-    { label: "Data Quality Score", value: "0.89", trend: "down", color: "text-red-600", icon: "trend-down" },
-    { label: "Prediction Latency", value: "0.91", trend: "neutral", color: "text-orange-500", icon: "chart" },
-    { label: "System Health", value: "0.90", trend: "neutral", color: "text-orange-500", icon: "chart" },
+    {
+      label: "Model Accuracy",
+      value: "92",
+      trend: "up",
+      color: "text-orange-600",
+      icon: "trend-up",
+    },
+    {
+      label: "Data Quality Score",
+      value: "0.89",
+      trend: "down",
+      color: "text-red-600",
+      icon: "trend-down",
+    },
+    {
+      label: "Prediction Latency",
+      value: "0.91",
+      trend: "neutral",
+      color: "text-orange-500",
+      icon: "chart",
+    },
+    {
+      label: "System Health",
+      value: "0.90",
+      trend: "neutral",
+      color: "text-orange-500",
+      icon: "chart",
+    },
   ];
 
   const features = [
@@ -36,26 +60,62 @@ export default function DashboardPage() {
           <div className="flex items-center gap-2 text-sm">
             <span className="text-gray-500">Dashboard</span>
             <span className="text-black">/</span>
-            <span className="text-black text-xs tracking-wide">Model Monitoring & drift Detection</span>
+            <span className="text-black text-xs tracking-wide">
+              Model Monitoring & drift Detection
+            </span>
           </div>
-          
+
           <div className="flex items-center gap-12">
             <div className="flex items-center gap-2 bg-gray-100 rounded-full px-5 py-2">
-              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                className="w-5 h-5 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
-              <input type="text" placeholder="Search..." className="bg-transparent outline-none text-sm w-32" />
+              <input
+                type="text"
+                placeholder="Search..."
+                className="bg-transparent outline-none text-sm w-32"
+              />
             </div>
-            
+
             <div className="flex items-center gap-4">
               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <svg className="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                <svg
+                  className="w-6 h-6 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
                 </svg>
               </button>
               <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <svg className="w-6 h-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                <svg
+                  className="w-6 h-6 text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
                 </svg>
               </button>
             </div>
@@ -66,21 +126,38 @@ export default function DashboardPage() {
       <div className="max-w-[1440px] mx-auto px-7 py-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-xl font-semibold mb-1 tracking-tight text-black">Model Monitoring & drift Detection</h1>
-          <p className="text-sm text-gray-600">Track model performance and detect drifts</p>
+          <h1 className="text-xl font-semibold mb-1 tracking-tight text-black">
+            Model Monitoring & drift Detection
+          </h1>
+          <p className="text-sm text-gray-600">
+            Track model performance and detect drifts
+          </p>
         </div>
 
         {/* Critical Alert */}
         <div className="bg-white rounded-xl shadow-sm mb-6 overflow-hidden">
           <div className="flex items-start gap-4 p-4 border-l-4 border-red-600">
             <div className="shrink-0 mt-0.5">
-              <svg className="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              <svg
+                className="w-5 h-5 text-red-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <div className="flex-1">
-              <p className="text-sm font-semibold text-red-600 mb-0.5">Critical Alert</p>
-              <p className="text-sm text-red-600">Data drift detected in multiple features. Consider retraining the model immediately</p>
+              <p className="text-sm font-semibold text-red-600 mb-0.5">
+                Critical Alert
+              </p>
+              <p className="text-sm text-red-600">
+                Data drift detected in multiple features. Consider retraining
+                the model immediately
+              </p>
             </div>
           </div>
         </div>
@@ -88,30 +165,69 @@ export default function DashboardPage() {
         {/* Metrics Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {metrics.map((metric) => (
-            <div key={metric.label} className="bg-white rounded-2xl shadow-sm p-6">
+            <div
+              key={metric.label}
+              className="bg-white rounded-2xl shadow-sm p-6"
+            >
               <div className="flex items-start justify-between mb-3">
-                <p className="text-sm font-semibold text-gray-800 tracking-wide leading-tight">{metric.label}</p>
+                <p className="text-sm font-semibold text-gray-800 tracking-wide leading-tight">
+                  {metric.label}
+                </p>
               </div>
               <div className="flex items-end justify-between">
                 <div>
-                  <span className={`text-2xl font-semibold ${metric.color} ${inter.className}`}>{metric.value}</span>
+                  <span
+                    className={`text-2xl font-semibold ${metric.color} ${inter.className}`}
+                  >
+                    {metric.value}
+                  </span>
                   <p className={`text-sm mt-1 ${metric.color}`}>
-                    {metric.trend === "down" ? "-10% from baseline" : metric.trend === "neutral" ? "Stable performance" : "High risk"}
+                    {metric.trend === "down"
+                      ? "-10% from baseline"
+                      : metric.trend === "neutral"
+                      ? "Stable performance"
+                      : "High risk"}
                   </p>
                 </div>
                 {metric.trend === "up" && (
-                  <svg className={`w-7 h-7 ${metric.color}`} fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                  <svg
+                    className={`w-7 h-7 ${metric.color}`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 )}
                 {metric.trend === "down" && (
-                  <svg className={`w-7 h-7 ${metric.color} transform rotate-180`} fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                  <svg
+                    className={`w-7 h-7 ${metric.color} transform rotate-180`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 )}
                 {metric.trend === "neutral" && (
-                  <svg className={`w-8 h-8 ${metric.color}`} fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 16h24M8 8l8 8 8-8M8 24l8-8 8 8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    className={`w-8 h-8 ${metric.color}`}
+                    fill="none"
+                    viewBox="0 0 32 32"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M4 16h24M8 8l8 8 8-8M8 24l8-8 8 8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 )}
               </div>
@@ -121,7 +237,9 @@ export default function DashboardPage() {
 
         {/* Browse Files Button */}
         <div className="flex justify-end mb-8">
-          <button className={`${dmSans.className} flex items-center gap-2.5 bg-black text-white px-6 py-2.5 rounded-lg text-base font-medium hover:bg-gray-800 transition-all shadow-md hover:shadow-lg`}>
+          <button
+            className={`${dmSans.className} flex items-center gap-2.5 bg-black text-white px-6 py-2.5 rounded-lg text-base font-medium hover:bg-gray-800 transition-all shadow-md hover:shadow-lg`}
+          >
             Browse Files
           </button>
         </div>
@@ -129,10 +247,14 @@ export default function DashboardPage() {
         {/* Temperature Chart */}
         <div className="bg-white rounded-xl shadow-sm p-8 mb-6">
           <div className="mb-6">
-            <h3 className="text-lg font-normal text-black mb-1">Housing Temperature Over Time</h3>
-            <p className="text-sm text-gray-600 tracking-wide">Temperature trends for high and low settings</p>
+            <h3 className="text-lg font-normal text-black mb-1">
+              Housing Temperature Over Time
+            </h3>
+            <p className="text-sm text-gray-600 tracking-wide">
+              Temperature trends for high and low settings
+            </p>
           </div>
-          
+
           <div className="relative h-56 mb-4">
             {/* Y-axis labels */}
             <div className="absolute left-0 top-0 bottom-6 w-10 flex flex-col justify-between text-xs text-gray-600">
@@ -142,7 +264,7 @@ export default function DashboardPage() {
               <span>40</span>
               <span>20</span>
             </div>
-            
+
             {/* Chart area */}
             <div className="absolute left-10 right-0 top-0 bottom-6">
               {/* Grid lines */}
@@ -154,7 +276,10 @@ export default function DashboardPage() {
               </div>
 
               {/* Chart lines */}
-              <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+              <svg
+                className="absolute inset-0 w-full h-full"
+                preserveAspectRatio="none"
+              >
                 <polyline
                   points="0,40 80,35 160,38 240,32 320,36 400,30"
                   fill="none"
@@ -167,7 +292,15 @@ export default function DashboardPage() {
                   stroke="#6200EE"
                   strokeWidth="2.5"
                 />
-                <line x1="0" y1="85" x2="100%" y2="85" stroke="rgba(0,0,0,0.4)" strokeWidth="1" strokeDasharray="6 4" />
+                <line
+                  x1="0"
+                  y1="85"
+                  x2="100%"
+                  y2="85"
+                  stroke="rgba(0,0,0,0.4)"
+                  strokeWidth="1"
+                  strokeDasharray="6 4"
+                />
               </svg>
             </div>
 
@@ -201,21 +334,25 @@ export default function DashboardPage() {
 
         {/* Feature Drift Analysis */}
         <div className="bg-white rounded-xl shadow-sm p-8">
-          <h3 className="text-sm font-medium text-gray-900 mb-8">Feature Drift Analysis</h3>
-          
+          <h3 className="text-sm font-medium text-gray-900 mb-8">
+            Feature Drift Analysis
+          </h3>
+
           <div className="space-y-7">
             {features.map((feature) => {
               const colors = getDriftColor(feature.drift);
               return (
                 <div key={feature.name}>
                   <div className="flex items-center justify-between mb-2.5">
-                    <span className="text-xs font-medium text-gray-900">{feature.name}</span>
+                    <span className="text-xs font-medium text-gray-900">
+                      {feature.name}
+                    </span>
                     <span className={`text-sm font-medium ${colors.text}`}>
                       {feature.drift}%
                     </span>
                   </div>
                   <div className="relative w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div 
+                    <div
                       className={`absolute left-0 top-0 h-full ${colors.bg} rounded-full transition-all duration-500`}
                       style={{ width: `${Math.min(feature.drift, 100)}%` }}
                     ></div>
@@ -229,7 +366,9 @@ export default function DashboardPage() {
           <div className="mt-8 pt-6 border-t border-gray-200">
             <div className="flex items-center justify-between text-sm">
               <span className="text-gray-600">Overall Drift Status:</span>
-              <span className="font-semibold text-red-600">Critical - Immediate Action Required</span>
+              <span className="font-semibold text-red-600">
+                Critical - Immediate Action Required
+              </span>
             </div>
           </div>
         </div>
