@@ -1,11 +1,7 @@
 "use client";
 
+import Header from "@/components/Header";
 import { useState } from "react";
-import { Inter, Roboto, DM_Sans } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
-const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["500"] });
 
 export default function UploadPage() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -59,69 +55,8 @@ export default function UploadPage() {
   };
 
   return (
-    <main className={`${roboto.className} min-h-screen bg-gray-50`}>
-      {/* Top Nav */}
-      <header className="bg-white border-b border-gray-200 px-7 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1 text-sm">
-            <span className={`${roboto.className} text-gray-500`}>
-              Dashboard
-            </span>
-            <span className="text-black">/</span>
-            <span className={`${roboto.className} text-black text-xs`}>
-              Upload Dataset
-            </span>
-          </div>
-          <div className="flex items-center gap-12">
-            <div className="flex items-center gap-2 bg-gray-200 bg-opacity-50 rounded-full px-5 py-2">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.33}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <input
-                type="text"
-                placeholder="Search..."
-                className="bg-transparent outline-none text-sm w-24"
-              />
-            </div>
-            <div className="flex items-center gap-4">
-              <button className="hover:bg-gray-100 p-1 rounded-full">
-                <svg
-                  className="w-7.5 h-7.5 text-gray-600"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z" />
-                </svg>
-              </button>
-              <button className="hover:bg-gray-100 p-1 rounded-full">
-                <svg
-                  className="w-7.5 h-7.5 text-gray-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.33}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <main className={`min-h-screen bg-gray-50`}>
+      <Header pageName="Dashboard" sectionName="Upload Dataset" />
 
       {/* Page Content */}
       <div className="p-8 flex gap-6">
@@ -130,12 +65,10 @@ export default function UploadPage() {
           {/* Header */}
           <div className="flex justify-between items-start">
             <div className="flex flex-col gap-2">
-              <h1
-                className={`${inter.className} text-xl font-semibold text-black`}
-              >
+              <h1 className={`text-xl font-semibold text-black`}>
                 Upload Your Dataset
               </h1>
-              <p className={`${inter.className} text-base text-gray-500`}>
+              <p className={`text-base text-gray-500`}>
                 Select and upload your data file for analysis
               </p>
             </div>
@@ -170,17 +103,15 @@ export default function UploadPage() {
               </svg>
             </div>
             <div className="flex flex-col gap-3 items-center text-center">
-              <h3
-                className={`${inter.className} text-lg font-medium text-black`}
-              >
+              <h3 className={`text-lg font-medium text-black`}>
                 Drag and drop your file here
               </h3>
-              <p className={`${inter.className} text-sm text-gray-500`}>
+              <p className={`text-sm text-gray-500`}>
                 or browse to choose a file
               </p>
             </div>
             <label
-              className={`${dmSans.className} bg-black text-white px-4 py-2.5 rounded-lg text-base font-medium cursor-pointer hover:bg-gray-800 transition-colors`}
+              className={`bg-black text-white px-4 py-2.5 rounded-lg text-base font-medium cursor-pointer hover:bg-gray-800 transition-colors`}
             >
               Browse Files
               <input
@@ -194,19 +125,17 @@ export default function UploadPage() {
 
           {/* URL Input */}
           <div className="flex flex-col gap-1.5">
-            <label className={`${inter.className} text-base text-black`}>
-              Or import from URL
-            </label>
+            <label className={`text-base text-black`}>Or import from URL</label>
             <div className="flex items-center gap-2.5 bg-white border border-gray-300 rounded-lg px-4 py-2.5">
               <input
                 type="text"
                 placeholder="Enter URL"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className={`${inter.className} flex-1 outline-none text-base text-gray-400`}
+                className={`flex-1 outline-none text-base text-gray-400`}
               />
               <button
-                className={`${inter.className} bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800`}
+                className={`bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800`}
               >
                 Import
               </button>
@@ -216,9 +145,7 @@ export default function UploadPage() {
           {/* Uploaded Files */}
           {selectedFile && (
             <div className="flex flex-col gap-3">
-              <h3
-                className={`${inter.className} text-lg font-medium text-black`}
-              >
+              <h3 className={`text-lg font-medium text-black`}>
                 Uploaded Files
               </h3>
 
@@ -237,9 +164,7 @@ export default function UploadPage() {
                     />
                   </svg>
                   <div className="flex flex-col gap-0.5">
-                    <span
-                      className={`${inter.className} text-base font-medium text-black`}
-                    >
+                    <span className={`text-base font-medium text-black`}>
                       {selectedFile.name}
                     </span>
                     <div className="flex items-center gap-1.5 text-sm text-gray-400">
@@ -292,12 +217,12 @@ export default function UploadPage() {
           {/* Action Buttons */}
           <div className="flex gap-6">
             <button
-              className={`${inter.className} flex-1 border border-gray-300 bg-white text-gray-800 px-4 py-3 rounded-lg text-base font-medium hover:bg-gray-50 shadow-sm`}
+              className={`flex-1 border border-gray-300 bg-white text-gray-800 px-4 py-3 rounded-lg text-base font-medium hover:bg-gray-50 shadow-sm`}
             >
               Cancel
             </button>
             <button
-              className={`${inter.className} flex-1 bg-black text-white px-4 py-3 rounded-lg text-base font-medium hover:bg-gray-800`}
+              className={`flex-1 bg-black text-white px-4 py-3 rounded-lg text-base font-medium hover:bg-gray-800`}
             >
               Continue
             </button>
@@ -308,14 +233,10 @@ export default function UploadPage() {
         <div className="flex flex-col gap-6 w-84">
           {/* Upload Guidelines */}
           <div className="bg-white rounded-2xl shadow-lg p-5 flex flex-col gap-4.5">
-            <h3 className={`${roboto.className} text-base text-black`}>
-              Upload Guideline
-            </h3>
+            <h3 className={`text-base text-black`}>Upload Guideline</h3>
 
             <div className="flex flex-col gap-1">
-              <span className={`${roboto.className} text-xs text-black`}>
-                Supported Formats
-              </span>
+              <span className={`text-xs text-black`}>Supported Formats</span>
               <div className="flex gap-4 mt-2">
                 <span className="bg-black bg-opacity-10 px-2.5 py-1.5 rounded-full text-xs">
                   CSV
@@ -329,9 +250,7 @@ export default function UploadPage() {
               </div>
             </div>
 
-            <h4 className={`${roboto.className} text-sm text-black`}>
-              File Requirements
-            </h4>
+            <h4 className={`text-sm text-black`}>File Requirements</h4>
 
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2.5">
@@ -355,7 +274,7 @@ export default function UploadPage() {
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className={`${roboto.className} text-xs text-black`}>
+                <span className={`text-xs text-black`}>
                   Max file size: 20 MB
                 </span>
               </div>
@@ -377,7 +296,7 @@ export default function UploadPage() {
                     strokeWidth="1.26"
                   />
                 </svg>
-                <span className={`${roboto.className} text-xs text-black`}>
+                <span className={`text-xs text-black`}>
                   Column headers required
                 </span>
               </div>
@@ -402,38 +321,32 @@ export default function UploadPage() {
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className={`${roboto.className} text-xs text-black`}>
-                  No empty columns
-                </span>
+                <span className={`text-xs text-black`}>No empty columns</span>
               </div>
             </div>
 
-            <h4 className={`${roboto.className} text-base text-black mt-2`}>
-              System Will:
-            </h4>
+            <h4 className={`text-base text-black mt-2`}>System Will:</h4>
 
             <div className="flex flex-col gap-2">
-              <span className={`${roboto.className} text-xs text-gray-500`}>
+              <span className={`text-xs text-gray-500`}>
                 • Remove duplicate rows
               </span>
-              <span className={`${roboto.className} text-xs text-gray-500`}>
+              <span className={`text-xs text-gray-500`}>
                 • Check for missing values
               </span>
-              <span className={`${roboto.className} text-xs text-gray-500`}>
+              <span className={`text-xs text-gray-500`}>
                 • Validate date formats
               </span>
             </div>
 
-            <p
-              className={`${roboto.className} text-xs text-black leading-relaxed`}
-            >
+            <p className={`text-xs text-black leading-relaxed`}>
               Our system will automatically detect and clean common data issues
             </p>
           </div>
 
           {/* Column Selection */}
           <div className="bg-white rounded-2xl shadow-lg p-5 flex flex-col gap-6">
-            <h3 className={`${roboto.className} text-base text-black`}>
+            <h3 className={`text-base text-black`}>
               Select Columns to Analyze
             </h3>
 
@@ -467,15 +380,13 @@ export default function UploadPage() {
                       </svg>
                     )}
                   </div>
-                  <span className={`${roboto.className} text-base text-black`}>
-                    {column.label}
-                  </span>
+                  <span className={`text-base text-black`}>{column.label}</span>
                 </button>
               ))}
             </div>
 
             <button
-              className={`${dmSans.className} bg-black text-white px-2.5 py-2.5 rounded-lg text-base font-medium self-start hover:bg-gray-800`}
+              className={`bg-black text-white px-2.5 py-2.5 rounded-lg text-base font-medium self-start hover:bg-gray-800`}
             >
               Apply
             </button>
